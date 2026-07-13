@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@fontsource/poppins": "^5.2.7",
+    "@fortawesome/fontawesome-free": "^7.3.0"
+  }
+}

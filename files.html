@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Nexus Files</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/files.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-robot"></i>
+            <h2>AI Nexus</h2>
+        </div>
+
+        <nav>
+
+           <a href="dashboard.html">
+    <i class="fa-solid fa-house"></i>
+    Dashboard
+</a>
+
+
+<a href="chat.html">
+    <i class="fa-solid fa-comments"></i>
+    AI Chat
+</a>
+
+
+
+
+<a href="analytic.html">
+    <i class="fa-solid fa-chart-line"></i>
+    Analytics
+</a>
+
+
+
+<a class="active" href="files.html">
+    <i class="fa-solid fa-folder"></i>
+    Files
+</a>
+
+
+
+
+<a href="settings.html">
+    <i class="fa-solid fa-gear"></i>
+    Settings
+</a>
+
+
+        </nav>
+
+    </aside>
+
+    <!-- Main -->
+ <main class="main-content">
+
+  <header>
+
+    <h1>Files</h1>
+
+    <div class="user">
+        <i class="fa-solid fa-bell"></i>
+        <img src="https://i.pravatar.cc/150?img=12" alt="User">
+    </div>
+
+</header>
+<section class="upload-section">
+
+    <div class="upload-box">
+
+        <i class="fa-solid fa-cloud-arrow-up"></i>
+
+        <h2>Drag & Drop Files Here</h2>
+
+        <p>or click below to upload</p>
+
+       <input
+    type="file"
+    id="fileInput"
+    hidden
+>
+
+<button class="upload-btn" id="uploadBtn" type="button">
+    Choose File
+</button>
+    </div>
+
+</section>
+
+<section class="files-list">
+
+    <h2>Recent Files</h2>
+
+    <div class="file-card">
+        <i class="fa-solid fa-file-pdf"></i>
+
+        <div>
+            <h3>Business_Report.pdf</h3>
+            <p>2.3 MB</p>
+        </div>
+
+     <button type="button" class="demo-btn">Summarize</button>
+    </div>
+
+    <div class="file-card">
+        <i class="fa-solid fa-file-word"></i>
+
+        <div>
+            <h3>Project.docx</h3>
+            <p>1.1 MB</p>
+        </div>
+
+        <button type="button" class="demo-btn">Explain</button>
+    </div>
+
+    <div class="file-card">
+        <i class="fa-solid fa-file-lines"></i>
+
+        <div>
+            <h3>Notes.txt</h3>
+            <p>300 KB</p>
+        </div>
+
+        <button type="button" class="demo-btn">Translate</button>
+    </div>
+
+</section>
+
+</main>
+
+</div>
+<script src="js/activity.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/files.js"></script>
+</body>
+</html>

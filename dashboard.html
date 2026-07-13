@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Nexus Dashboard</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-robot"></i>
+            <h2>AI Nexus</h2>
+        </div>
+
+        <nav>
+
+           <a class="active" href="dashboard.html">
+    <i class="fa-solid fa-house"></i>
+    Dashboard
+</a>
+
+
+<a href="chat.html">
+    <i class="fa-solid fa-comments"></i>
+    AI Chat
+</a>
+
+
+
+
+<a href="analytic.html">
+    <i class="fa-solid fa-chart-line"></i>
+    Analytics
+</a>
+
+
+
+
+<a href="files.html">
+    <i class="fa-solid fa-folder"></i>
+    Files
+</a>
+
+
+
+
+<a href="settings.html">
+    <i class="fa-solid fa-gear"></i>
+    Settings
+</a>
+
+
+        </nav>
+
+    </aside>
+
+    <!-- Main -->
+    <main class="main-content">
+
+    <header>
+
+        <h1>Dashboard</h1>
+
+        <<div class="user">
+
+    <div class="notification">
+
+        <i class="fa-solid fa-bell" id="bell"></i>
+
+        <span class="notification-badge">3</span>
+
+        <div class="notification-menu" id="notificationMenu">
+
+            <h3>Notifications</h3>
+
+            <p>🤖 AI finished your last request.</p>
+
+            <p>📄 Document uploaded successfully.</p>
+
+            <p>🎉 Welcome to AI Nexus!</p>
+
+        </div>
+
+    </div>
+
+    <div class="profile">
+
+    <img src="https://i.pravatar.cc/150?img=12"
+         alt="User"
+         id="profileBtn">
+
+    <div class="profile-menu" id="profileMenu">
+
+        <a href="settings.html">
+            <i class="fa-solid fa-user"></i>
+            My Profile
+        </a>
+
+        <a href="settings.html">
+            <i class="fa-solid fa-gear"></i>
+            Settings
+        </a>
+
+        <a href="login.html">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+    </header>
+
+    <section class="welcome-card">
+
+        <div>
+            <h2>Welcome back 👋</h2>
+            <p>Manage your AI workspace and track your activity.</p>
+        </div>
+
+        <button id="upgradeBtn">Upgrade Plan</button>
+
+    </section>
+    <section class="quick-actions">
+
+    <a href="chat.html" class="action-card">
+        <i class="fa-solid fa-comments"></i>
+        <h3>New Chat</h3>
+        <p>Start talking with AI</p>
+    </a>
+
+    <a href="files.html" class="action-card">
+        <i class="fa-solid fa-file-arrow-up"></i>
+        <h3>Upload File</h3>
+        <p>Analyze documents</p>
+    </a>
+
+    <a href="analytic.html" class="action-card">
+        <i class="fa-solid fa-chart-line"></i>
+        <h3>Analytics</h3>
+        <p>View AI statistics</p>
+    </a>
+
+    <a href="settings.html" class="action-card">
+        <i class="fa-solid fa-gear"></i>
+        <h3>Settings</h3>
+        <p>Customize AI Nexus</p>
+    </a>
+
+</section>
+<section class="stats">
+
+
+    <div class="card">
+        <i class="fa-solid fa-comments"></i>
+        <h3 id="chatCount">0</h3>
+        <p>AI Conversations</p>
+    </div>
+
+
+    <div class="card">
+        <i class="fa-solid fa-file"></i>
+        <h3 id="fileCount">0</h3>
+        <p>Files Processed</p>
+    </div>
+
+
+  <div class="card token-card">
+
+
+    <i class="fa-solid fa-bolt"></i>
+
+
+   <h3 id="tokenCount">0</h3>
+
+
+    <p>Tokens Used</p>
+
+
+    <div class="token-info">
+        <span id="tokenText">0 / 100000</span>
+        <span id="tokenPercent">0%</span>
+    </div>
+
+
+    <div class="progress-bar">
+        <div class="progress"></div>
+    </div>
+
+
+</div>
+
+
+</section>
+<section class="ai-tip-card">
+
+    <div class="tip-header">
+        <i class="fa-solid fa-lightbulb"></i>
+        <h2>Daily AI Tip</h2>
+    </div>
+
+    <p id="dailyTip">
+        Loading today's AI tip...
+    </p>
+
+</section>
+
+<section class="dashboard-grid">
+
+    <!-- AI Chat -->
+
+    <div class="chat-preview">
+
+        <h2>AI Assistant</h2>
+
+        <div class="message user-msg">
+            <strong>You:</strong> Generate a landing page for my startup.
+        </div>
+
+        <div class="message ai-msg">
+            <strong>AI:</strong> Sure! I'll create a modern responsive landing page with a hero section, pricing, features, and contact form.
+        </div>
+
+        <div class="chat-input">
+    <input
+        type="text"
+        id="dashboardInput"
+        placeholder="Ask AI anything..."
+    >
+
+    <button id="dashboardSend">
+        <i class="fa-solid fa-paper-plane"></i>
+    </button>
+</div>
+
+    </div>
+
+    <!-- Recent Activity -->
+
+    <div class="activity">
+
+        <h2>Recent Activity</h2>
+
+        <ul id="activityList">
+
+</ul>
+    </div>
+
+</main>
+
+</div>
+<div class="modal" id="upgradeModal">
+
+    <div class="modal-content">
+
+        <span class="close-modal" id="closeModal">&times;</span>
+
+        <h2>🚀 Upgrade to Pro</h2>
+
+        <p>Unlock premium AI features.</p>
+
+        <div class="plan">
+
+            <h3>Pro Plan</h3>
+
+            <p>$9.99 / month</p>
+
+            <ul>
+                <li>✅ Unlimited AI Chats</li>
+                <li>✅ Unlimited File Analysis</li>
+                <li>✅ Faster Responses</li>
+                <li>✅ Priority Support</li>
+            </ul>
+
+            <button class="choose-plan-btn">
+    <i class="fa-solid fa-rocket"></i>
+    Choose Pro Plan
+</button>
+
+        </div>
+
+    </div>
+
+</div>
+<script src="js/activity.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

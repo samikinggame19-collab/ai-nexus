@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Nexus Files</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/settings.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-robot"></i>
+            <h2>AI Nexus</h2>
+        </div>
+
+        <nav>
+
+           <a href="dashboard.html">
+    <i class="fa-solid fa-house"></i>
+    Dashboard
+</a>
+
+
+<a href="chat.html">
+    <i class="fa-solid fa-comments"></i>
+    AI Chat
+</a>
+
+
+
+
+<a href="analytic.html">
+    <i class="fa-solid fa-chart-line"></i>
+    Analytics
+</a>
+
+
+
+<a href="files.html">
+    <i class="fa-solid fa-folder"></i>
+    Files
+</a>
+
+
+
+
+<a class="active"href="settings.html">
+    <i class="fa-solid fa-gear"></i>
+    Settings
+</a>
+
+
+        </nav>
+
+    </aside>
+
+    <!-- Main -->
+ <main class="main-content">
+
+  <header>
+
+    <h1>Settings</h1>
+
+    <div class="user">
+        <i class="fa-solid fa-bell"></i>
+        <img src="https://i.pravatar.cc/150?img=12" alt="User">
+    </div>
+
+</header>
+<section class="settings-grid">
+
+    <div class="setting-card">
+        <h2>Profile</h2>
+
+        <div class="setting-item">
+            <label>Name</label>
+            <input type="text" id="profileName" value="John Doe">
+        </div>
+
+        <div class="setting-item">
+            <label>Email</label>
+            <input type="email" id="profileEmail" value="john@example.com">
+        </div>
+
+        <button class="save-btn">Save Changes</button>
+    </div>
+
+    <div class="setting-card">
+        <h2>AI Settings</h2>
+
+        <div class="setting-item">
+            <label>AI Model</label>
+
+            <select>
+                <option>DeepSeek Chat</option>
+                <option>GPT-4.1</option>
+                <option>Claude</option>
+                <option>Gemini</option>
+            </select>
+        </div>
+
+        <div class="setting-item">
+            <label>Theme</label>
+
+            <select id="themeSelect">
+    <option value="dark">Dark</option>
+    <option value="light">Light</option>
+        </div>
+    </div>
+
+    <div class="setting-card">
+        <h2>Notifications</h2>
+
+        <div class="toggle">
+            <span>Email Notifications</span>
+            <input type="checkbox" checked>
+        </div>
+
+        <div class="toggle">
+            <span>Desktop Notifications</span>
+            <input type="checkbox">
+        </div>
+    </div>
+
+</section>
+</main>
+
+</div>
+<script src="js/activity.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/settings.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Nexus Analytics</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/analytics.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-robot"></i>
+            <h2>AI Nexus</h2>
+        </div>
+
+        <nav>
+
+           <a href="dashboard.html">
+    <i class="fa-solid fa-house"></i>
+    Dashboard
+</a>
+
+
+<a href="chat.html">
+    <i class="fa-solid fa-comments"></i>
+    AI Chat
+</a>
+
+
+
+
+<a class="active" href="analytic.html">
+    <i class="fa-solid fa-chart-line"></i>
+    Analytics
+</a>
+
+
+
+<a href="files.html">
+    <i class="fa-solid fa-folder"></i>
+    Files
+</a>
+
+
+
+
+<a href="settings.html">
+    <i class="fa-solid fa-gear"></i>
+    Settings
+</a>
+
+
+        </nav>
+
+    </aside>
+
+    <!-- Main -->
+ <main class="main-content">
+
+  <header>
+
+    <h1>Analytics</h1>
+
+    <div class="user">
+        <i class="fa-solid fa-bell"></i>
+        <img src="https://i.pravatar.cc/150?img=12" alt="User">
+    </div>
+
+</header>
+<section class="analytics-stats">
+
+    <div class="stat-card">
+        <i class="fa-solid fa-users"></i>
+        <h3>2,457</h3>
+        <p>Total Users</p>
+    </div>
+
+    <div class="stat-card">
+        <i class="fa-solid fa-bolt"></i>
+        <h3>0.8s</h3>
+        <p>Avg Response</p>
+    </div>
+
+    <div class="stat-card">
+        <i class="fa-solid fa-brain"></i>
+        <h3>98.7%</h3>
+        <p>AI Accuracy</p>
+    </div>
+
+    <div class="stat-card">
+        <i class="fa-solid fa-chart-simple"></i>
+        <h3>+18%</h3>
+        <p>Weekly Growth</p>
+    </div>
+
+</section>
+    <section class="analytics-grid">
+
+        <div class="chart-card">
+            <h2>AI Conversations</h2>
+            <canvas id="conversationChart"></canvas>
+        </div>
+
+        <div class="chart-card">
+            <h2>Token Usage</h2>
+            <canvas id="tokenChart"></canvas>
+        </div>
+
+        <div class="chart-card">
+            <h2>Most Used Features</h2>
+
+            <div class="feature">
+                <span>AI Chat</span>
+                <span>65%</span>
+            </div>
+
+            <div class="feature">
+                <span>PDF Summary</span>
+                <span>20%</span>
+            </div>
+
+            <div class="feature">
+                <span>Code Generation</span>
+                <span>15%</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+</div>
+
+<script src="js/theme.js"></script>
+<script src="js/analytics.js"></script>
+</body>
+</html>
