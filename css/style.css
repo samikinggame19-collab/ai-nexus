@@ -767,3 +767,79 @@ body{
     }
 
 }
+@keyframes spin{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@media (max-width:768px){
+
+    body{
+        padding:15px;
+        min-height:100vh;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .login-container{
+        width:100%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .login-card{
+        width:100%;
+        max-width:360px;
+        padding:20px;
+    }
+
+    .login-card h1{
+        font-size:26px;
+        margin-bottom:6px;
+    }
+
+    .login-card p{
+        font-size:13px;
+        margin-bottom:20px;
+    }
+
+    .input-box{
+        height:48px;
+        margin-bottom:14px;
+    }
+
+    .login-btn,
+    .google-btn{
+        padding:13px;
+    }
+
+    .options{
+        margin-bottom:18px;
+    }
+}
+@media (max-width:768px){
+
+    .background{
+        overflow:hidden;
+    }
+
+    .blob1{
+        width:180px;
+        height:180px;
+        top:-60px;
+        left:-60px;
+    }
+
+    .blob2{
+        width:180px;
+        height:180px;
+        right:-60px;
+        bottom:-60px;
+    }
+
+}
