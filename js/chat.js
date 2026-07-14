@@ -87,7 +87,7 @@ messages.scrollHeight;
 
 
 
-fetch("http://localhost:3000/chat", {
+fetch("https://ai-nexus-0nsz.onrender.com", {
 
 
     method: "POST",
