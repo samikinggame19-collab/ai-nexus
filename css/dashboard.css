@@ -1107,75 +1107,135 @@ body.light-mode select{
     }
 
 }
-@media(max-width:768px){
+@media (max-width:768px){
 
-.chat-actions{
-    width:100%;
-}
+    .dashboard{
+        flex-direction:column;
+    }
 
+    .sidebar{
+        position:fixed;
+        bottom:0;
+        left:0;
+        width:100%;
+        height:70px;
+        padding:10px;
+        z-index:1000;
+    }
 
-.chat-actions button{
-    flex:1;
-}
+    .logo{
+        display:none;
+    }
 
-}
-.card,
-.chat-preview,
-.activity,
-.setting-card,
-.file-card{
-    max-width:100%;
-}
-.profile{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    position:relative;
-}
+    nav{
+        flex-direction:row;
+        justify-content:space-around;
+        width:100%;
+    }
 
-.profile-info{
-    text-align:right;
-}
+    nav a{
+        font-size:0;
+        padding:10px;
+    }
 
-.profile-info h4{
-    color:#fff;
-    font-size:15px;
-    margin:0;
-    font-weight:600;
-}
+    nav a i{
+        font-size:20px;
+    }
 
-.profile-info p{
-    color:#94a3b8;
-    font-size:12px;
-    margin:2px 0 0;
-}
-#welcomeText{
+    .main-content{
+        padding:16px;
+        padding-bottom:90px;
+    }
 
-    font-size:32px;
-    font-weight:700;
-    color:white;
+    .stats,
+    .quick-actions,
+    .dashboard-grid{
+        grid-template-columns:1fr;
+    }
 
+    .welcome-card{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:18px;
+    }
+
+    .welcome-card button{
+        width:100%;
+    }
+
+    .chat-input{
+        flex-direction:column;
+    }
+
+    .chat-input input,
+    .chat-input button{
+        width:100%;
+        border-radius:12px;
+    }
+
+    .chat-input button{
+        height:50px;
+    }
+
+    .chat-actions{
+        width:100%;
+    }
+
+    .chat-actions button{
+        flex:1;
+    }
+
+    .notification-menu,
+    .profile-menu{
+        width:240px;
+        right:0;
+    }
+
+    .card,
+    .chat-preview,
+    .activity,
+    .action-card,
+    .ai-tip-card{
+        width:100%;
+    }
+    #welcomeText{
+    font-size:24px;
 }
 
 #dateText{
-
-    color:#94a3b8;
-    margin-top:8px;
-    font-size:16px;
-
+    font-size:14px;
 }
 
 #clockText{
+    font-size:15px;
+}
 
-    display:block;
+.welcome-card{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.welcome-card button{
+    width:100%;
+    margin-top:15px;
+}
+.chat-preview{
+    width:100%;
+    overflow:hidden;
+}
+
+.chat-input{
+    flex-direction:column;
+}
+
+.chat-input input{
+    width:100%;
+}
+
+.chat-input button{
+    width:100%;
     margin-top:10px;
-
-    font-size:18px;
-
-    color:#818cf8;
-
-    font-weight:600;
-
+}
 }
 @media(max-width:950px){
 
@@ -1183,6 +1243,19 @@ body.light-mode select{
 
     grid-template-columns:1fr;
 
+}
+
+}
+@media(max-width:768px){
+
+#welcomeText{
+    font-size:24px;
+    word-break:break-word;
+}
+
+.welcome-card{
+    flex-direction:column;
+    align-items:flex-start;
 }
 
 }

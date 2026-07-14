@@ -58,23 +58,23 @@
 }
 @media(max-width:768px){
 
+.settings-grid{
+    grid-template-columns:1fr;
+}
+
 .setting-card{
-
+    width:100%;
     padding:20px;
-
 }
 
 .setting-item input,
 .setting-item select{
-
+    width:100%;
     font-size:15px;
-
 }
 
 .save-btn{
-
     width:100%;
-
 }
 
 }

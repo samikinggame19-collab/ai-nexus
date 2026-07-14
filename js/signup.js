@@ -19,7 +19,7 @@ form.addEventListener("submit", function(e) {
     const exists = users.find(user => user.email === email);
 
     if (exists) {
-        alert("Email already exists.");
+        showToast("Email already exists.");
         return;
     }
 

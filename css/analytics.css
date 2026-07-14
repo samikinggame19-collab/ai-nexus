@@ -80,3 +80,23 @@ canvas{
     }
 
 }
+@media(max-width:768px){
+
+.analytics-stats{
+    grid-template-columns:1fr;
+}
+
+.analytics-grid{
+    grid-template-columns:1fr;
+}
+
+.chart-card{
+    min-height:auto;
+    padding:20px;
+}
+
+canvas{
+    height:220px !important;
+}
+
+}
