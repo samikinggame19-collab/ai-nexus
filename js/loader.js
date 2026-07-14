@@ -1,11 +1,7 @@
+const loader = document.querySelector(".loader");
+
 window.addEventListener("load", () => {
-
-    const loader = document.getElementById("loader");
-
-    setTimeout(() => {
-
+    if (loader) {
         loader.classList.add("hide");
-
-    },1500);
-
+    }
 });
