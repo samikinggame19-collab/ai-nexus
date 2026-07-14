@@ -1,3 +1,8 @@
+if(localStorage.getItem("loggedIn")!=="true"){
+
+    window.location.href="login.html";
+
+}
 const input = document.getElementById("dashboardInput");
 const button = document.getElementById("dashboardSend");
 
@@ -234,3 +239,95 @@ if(activityList){
     });
 
 }
+const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+if (loggedInUser) {
+
+    document.getElementById("userName").textContent = loggedInUser.name;
+
+    document.getElementById("userEmail").textContent = loggedInUser.email;
+
+    const welcome = document.querySelector(".welcome-card h2");
+
+    welcome.textContent = `Welcome back, ${loggedInUser.name}! 👋`;
+
+}
+// ===========================
+// Logout
+// ===========================
+
+const logoutBtn = document.getElementById("logoutBtn");
+
+if (logoutBtn) {
+
+    logoutBtn.addEventListener("click", function (e) {
+
+        e.preventDefault();
+
+        const confirmLogout = confirm("Are you sure you want to logout?");
+
+        if (!confirmLogout) return;
+
+        localStorage.removeItem("loggedIn");
+        localStorage.removeItem("loggedInUser");
+
+        window.location.href = "login.html";
+
+    });
+
+}
+// =======================
+// Welcome + Live Clock
+// =======================
+
+const user = JSON.parse(localStorage.getItem("loggedInUser"));
+
+if(user){
+
+    document.getElementById("userName").textContent = user.name;
+
+    document.getElementById("userEmail").textContent = user.email;
+
+    const hour = new Date().getHours();
+
+    let greeting = "Welcome";
+
+    if(hour < 12){
+
+        greeting = "Good Morning ☀️";
+
+    }else if(hour < 18){
+
+        greeting = "Good Afternoon 🌤️";
+
+    }else{
+
+        greeting = "Good Evening 🌙";
+
+    }
+
+    document.getElementById("welcomeText").textContent =
+        `${greeting}, ${user.name}!`;
+
+}
+
+const dateOptions = {
+    weekday:"long",
+    year:"numeric",
+    month:"long",
+    day:"numeric"
+};
+
+document.getElementById("dateText").textContent =
+    new Date().toLocaleDateString("en-US",dateOptions);
+
+function updateClock(){
+
+    document.getElementById("clockText").textContent =
+        new Date().toLocaleTimeString();
+
+}
+
+updateClock();
+
+setInterval(updateClock,1000);

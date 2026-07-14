@@ -56,3 +56,25 @@
     padding:15px 0;
     border-bottom:1px solid rgba(255,255,255,.08);
 }
+@media(max-width:768px){
+
+.setting-card{
+
+    padding:20px;
+
+}
+
+.setting-item input,
+.setting-item select{
+
+    font-size:15px;
+
+}
+
+.save-btn{
+
+    width:100%;
+
+}
+
+}

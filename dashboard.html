@@ -78,7 +78,7 @@
 
         <h1>Dashboard</h1>
 
-        <<div class="user">
+        <div class="user">
 
     <div class="notification">
 
@@ -99,15 +99,20 @@
         </div>
 
     </div>
+<div class="profile">
 
-    <div class="profile">
+    <div class="profile-info">
+        <h4 id="userName">User</h4>
+        <p id="userEmail">user@email.com</p>
+    </div>
 
-    <img src="https://i.pravatar.cc/150?img=12"
-         alt="User"
-         id="profileBtn">
+    <img
+        src="https://i.pravatar.cc/150?img=12"
+        alt="User"
+        id="profileBtn"
+    >
 
     <div class="profile-menu" id="profileMenu">
-
         <a href="settings.html">
             <i class="fa-solid fa-user"></i>
             My Profile
@@ -118,10 +123,10 @@
             Settings
         </a>
 
-        <a href="login.html">
-            <i class="fa-solid fa-right-from-bracket"></i>
-            Logout
-        </a>
+       <a href="#" id="logoutBtn">
+    <i class="fa-solid fa-right-from-bracket"></i>
+    Logout
+</a>
 
     </div>
 
@@ -132,14 +137,25 @@
 
     <section class="welcome-card">
 
-        <div>
-            <h2>Welcome back 👋</h2>
-            <p>Manage your AI workspace and track your activity.</p>
-        </div>
+    <div>
 
-        <button id="upgradeBtn">Upgrade Plan</button>
+        <h2 id="welcomeText">Welcome back 👋</h2>
 
-    </section>
+        <p id="dateText">
+            Loading date...
+        </p>
+
+        <small id="clockText">
+            00:00:00
+        </small>
+
+    </div>
+
+    <button id="upgradeBtn">
+        Upgrade Plan
+    </button>
+
+</section>
     <section class="quick-actions">
 
     <a href="chat.html" class="action-card">
@@ -304,5 +320,7 @@
 <script src="js/activity.js"></script>
 <script src="js/theme.js"></script>
 <script src="js/dashboard.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/loader.js"></script>
 </body>
 </html>

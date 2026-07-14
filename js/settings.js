@@ -1,3 +1,14 @@
+const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+if(loggedInUser){
+
+    document.getElementById("profileName").value =
+        loggedInUser.name;
+
+    document.getElementById("profileEmail").value =
+        loggedInUser.email;
+
+}
 const themeSelect = document.getElementById("themeSelect");
 
 
@@ -19,18 +30,7 @@ const saveBtn = document.querySelector(".save-btn");
 
 // Load profile data
 
-const savedName = localStorage.getItem("name");
-const savedEmail = localStorage.getItem("email");
 
-
-if(savedName){
-    nameInput.value = savedName;
-}
-
-
-if(savedEmail){
-    emailInput.value = savedEmail;
-}
 
 
 // Theme change
@@ -56,12 +56,26 @@ addActivity("🎨 Theme changed");
 
 // Save profile
 
-saveBtn.addEventListener("click", function(){
+saveBtn.addEventListener("click", () => {
 
-    localStorage.setItem("name", nameInput.value);
-    localStorage.setItem("email", emailInput.value);
+    const oldUser = JSON.parse(localStorage.getItem("loggedInUser"));
+    const oldEmail = oldUser.email;
 
+    let users = JSON.parse(localStorage.getItem("users")) || [];
 
-    alert("Profile saved successfully!");
+    const updatedUser = {
+        ...oldUser,
+        name: nameInput.value.trim(),
+        email: emailInput.value.trim()
+    };
+
+    users = users.map(user =>
+        user.email === oldEmail ? updatedUser : user
+    );
+
+    localStorage.setItem("users", JSON.stringify(users));
+    localStorage.setItem("loggedInUser", JSON.stringify(updatedUser));
+
+    showToast("✅ Profile updated successfully!");
 
 });

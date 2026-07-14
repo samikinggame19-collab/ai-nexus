@@ -134,7 +134,7 @@ document.querySelectorAll(".demo-btn").forEach(button => {
 
     button.addEventListener("click", () => {
 
-        alert("Demo file: Upload a real file to use AI analysis.");
+        showToast("Demo file: Upload a real file to use AI analysis.");
 
     });
 
