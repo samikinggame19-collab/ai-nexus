@@ -86,34 +86,35 @@ messages.scrollHeight;
 
 
 
-
-fetch("https://ai-nexus-0nsz.onrender.com", {
-
-
+fetch("https://ai-nexus-0nsz.onrender.com/chat", {
     method: "POST",
-
 
     headers: {
         "Content-Type": "application/json"
     },
 
-
     body: JSON.stringify({
         message: text
     })
 
+})
+
+.then(async response => {
+
+    const result = await response.text();
+
+    console.log("Server returned:");
+    console.log(result);
+
+    return JSON.parse(result);
 
 })
-.then(response => response.json())
-
 
 .then(data => {
 
-
     console.log("Backend response:", data);
 
-
- typingMessage.innerHTML = `
+    typingMessage.innerHTML = `
 <strong>AI:</strong><br>
 ${data.reply}
 
@@ -122,64 +123,39 @@ ${data.reply}
 Copy
 </button>
 `;
-const copyButton = typingMessage.querySelector(".copy-btn");
 
+    const copyButton = typingMessage.querySelector(".copy-btn");
 
-copyButton.addEventListener("click", () => {
+    copyButton.addEventListener("click", () => {
 
-    navigator.clipboard.writeText(data.reply);
-
-
-    copyButton.innerHTML = `
-    <i class="fa-solid fa-check"></i>
-    Copied!
-    `;
-
-
-    setTimeout(()=>{
+        navigator.clipboard.writeText(data.reply);
 
         copyButton.innerHTML = `
-        <i class="fa-solid fa-copy"></i>
-        Copy
-        `;
+<i class="fa-solid fa-check"></i>
+Copied!
+`;
 
-    },2000);
+        setTimeout(() => {
 
-});
-addActivity("🤖 AI conversation completed");
-history.push({
-    user: text,
-    ai: data.reply
-});
+            copyButton.innerHTML = `
+<i class="fa-solid fa-copy"></i>
+Copy
+`;
 
+        }, 2000);
 
-localStorage.setItem(
-    "chatHistory",
-    JSON.stringify(history)
-);
-let chats = localStorage.getItem("totalChats") || 0;
-
-chats++;
-
-localStorage.setItem("totalChats", chats);
-
+    });
 
 })
 
-
-
 .catch(error => {
 
+    console.log(error);
 
     typingMessage.innerHTML =
     "<strong>AI:</strong> " + error.message;
 
-
-    console.log("Fetch error:", error);
-
-
 });
-
 
 
 
